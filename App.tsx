@@ -12,13 +12,11 @@ export default function App() {
 				backgroundColor: 'yellow',
 				alignItems: 'flex-end',
 				height: 500,
-				flexDirection: 'row',
-				flexWrap: 'wrap',
-				alignContent: 'center'
+				flexDirection: 'row'
 			}}>
-				<View style={{ backgroundColor: 'tomato', width: '50%', height: 100 }}><Text>1</Text></View>
-				<View style={{ backgroundColor: 'purple', width: '50%', height: 100 }}></View>
-				<View style={{ backgroundColor: 'green', width: '50%', height: 100 }}></View>
+				<View style={{ backgroundColor: 'tomato', flexGrow: 1, height: 100 }}><Text>1</Text></View>
+				<View style={{ backgroundColor: 'purple', flexGrow: 1, height: 100 }}><Text>2</Text></View>
+				<View style={{ backgroundColor: 'green', flexGrow: 1, height: 100 }}><Text>3</Text></View>
 			</View>
 		</View >
 	);
