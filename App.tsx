@@ -10,9 +10,10 @@ export default function App() {
 			</View>
 			<View style={{
 				backgroundColor: 'yellow',
-				alignItems: 'flex-start',
+				alignItems: 'flex-end',
 				height: 500,
-				justifyContent: 'space-evenly'
+				justifyContent: 'space-between',
+				flexDirection: 'row'
 			}}>
 				<View style={{ backgroundColor: 'tomato', height: 100 }}><Text>1</Text></View>
 				<View style={{ backgroundColor: 'purple', width: 100, height: 100 }}></View>
