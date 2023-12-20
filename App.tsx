@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, Dimensions, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
+	const width = Dimensions.get('window').width;
 	return (
 		<View style={styles.container}>
 			<View style={styles.top}>
@@ -16,9 +17,9 @@ export default function App() {
 				flexWrap: 'wrap',
 				gap: 10
 			}}>
-				<View style={{ backgroundColor: 'tomato', width: '50%', height: 100 }}><Text>1</Text></View>
-				<View style={{ backgroundColor: 'purple', width: '50%', height: 100 }}><Text>2</Text></View>
-				<View style={{ backgroundColor: 'green', width: '50%', height: 100 }}><Text>3</Text></View>
+				<View style={{ backgroundColor: 'tomato', width: (width / 2) - 5, height: 100 }}><Text>1</Text></View>
+				<View style={{ backgroundColor: 'purple', width: (width / 2) - 5, height: 100 }}><Text>2</Text></View>
+				<View style={{ backgroundColor: 'green', width: (width / 2) - 5, height: 100 }}><Text>3</Text></View>
 			</View>
 		</View >
 	);
