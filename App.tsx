@@ -8,7 +8,17 @@ export default function App() {
 				<Text style={styles.textStyle}>Моё первое приложение</Text>
 				<Button title="Я кнопка" />
 			</View>
-		</View>
+			<View style={{
+				backgroundColor: 'yellow',
+				alignItems: 'flex-start',
+				height: 500,
+				justifyContent: 'space-evenly'
+			}}>
+				<View style={{ backgroundColor: 'tomato', height: 100 }}><Text>1</Text></View>
+				<View style={{ backgroundColor: 'purple', width: 100, height: 100 }}></View>
+				<View style={{ backgroundColor: 'green', width: 100, height: 100 }}></View>
+			</View>
+		</View >
 	);
 }
 
