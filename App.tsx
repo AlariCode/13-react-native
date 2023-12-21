@@ -5,32 +5,35 @@ export default function App() {
 	const width = Dimensions.get('window').width;
 	return (
 		<View style={styles.container}>
-			<View style={styles.top}>
-				<Text style={styles.textStyle}>Моё первое приложение</Text>
-				<Button title="Я кнопка" />
+			<View style={styles.content}>
+				<Text>PurpleSchool</Text>
+				<View style={styles.form}>
+					<TextInput style={styles.input} />
+					<TextInput style={styles.input} />
+					<Button title='Войти' />
+				</View>
+				<Text>Восстановить пароль</Text>
 			</View>
-			<View style={{
-				backgroundColor: 'yellow',
-				alignItems: 'flex-end',
-				height: 500,
-				flexDirection: 'row',
-				flexWrap: 'wrap',
-				gap: 10
-			}}>
-				<View style={{ backgroundColor: 'tomato', width: (width / 2) - 5, height: 100 }}><Text>1</Text></View>
-				<View style={{ backgroundColor: 'purple', width: (width / 2) - 5, height: 100 }}><Text>2</Text></View>
-				<View style={{ backgroundColor: 'green', width: (width / 2) - 5, height: 100 }}><Text>3</Text></View>
-			</View>
+
 		</View >
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
-		marginTop: 70
+		justifyContent: 'center',
+		flex: 1,
+		padding: 55
 	},
-	top: {
-		flexDirection: 'row'
+	content: {
+		alignItems: 'center',
+		gap: 50
 	},
-	textStyle: { color: 'blue', fontSize: 24, borderWidth: 1, borderColor: 'blue' }
+	form: {
+		alignSelf: 'stretch',
+		gap: 16
+	},
+	input: {
+		backgroundColor: '#2E2D3D'
+	}
 });
