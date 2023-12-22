@@ -4,7 +4,8 @@ export const Colors = {
 	violetDark: '#2E2D3D',
 	primary: '#6C38CC',
 	primaryHover: '#452481',
-	link: '#A97BFF'
+	link: '#A97BFF',
+	white: '#FAFAFA'
 }
 
 export const Gaps = {
@@ -14,4 +15,9 @@ export const Gaps = {
 
 export const Radius = {
 	r10: 10
+}
+
+export const Fonts = {
+	f16: 16,
+	f18: 18
 }
