@@ -1,6 +1,5 @@
 import { Animated, Pressable, PressableProps, StyleSheet, Text, View } from 'react-native';
 import { Colors, Fonts, Radius } from '../tokens';
-import { useEffect } from 'react';
 
 export function Button({ text, ...props }: PressableProps & { text: string }) {
 	const animatedValue = new Animated.ValueXY({
@@ -14,16 +13,13 @@ export function Button({ text, ...props }: PressableProps & { text: string }) {
 			y: 100
 		},
 		duration: 2000,
-		useNativeDriver: true
+		useNativeDriver: false
 	}).start();
 
 	return (
 		<Pressable {...props}>
 			<Animated.View style={{
-				...styles.button, transform: [
-					{ translateX: animatedValue.x },
-					{ translateY: animatedValue.y }
-				]
+				...styles.button, width: animatedValue.x, height: animatedValue.y
 			}}>
 				<Text style={styles.text}>{text}</Text>
 			</Animated.View>
