@@ -13,12 +13,15 @@ export function Input({ isPassword, ...props }: TextInputProps & { isPassword?: 
 				style={styles.input}
 				secureTextEntry={isPassword && !isPasswordVisible}
 				placeholderTextColor={Colors.gray}
-				{...props} />
-			{isPassword && <Pressable onPress={() => setIsPasswordVisible(state => !state)} style={styles.eyeIcon}>
-				{isPasswordVisible ? <EyeOpenedIcon /> : <EyeClosedIcon />}
-			</Pressable>}
+				{...props}
+			/>
+			{isPassword && (
+				<Pressable onPress={() => setIsPasswordVisible((state) => !state)} style={styles.eyeIcon}>
+					{isPasswordVisible ? <EyeOpenedIcon /> : <EyeClosedIcon />}
+				</Pressable>
+			)}
 		</View>
-	)
+	);
 }
 
 const styles = StyleSheet.create({
@@ -28,12 +31,12 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 24,
 		borderRadius: Radius.r10,
 		fontSize: 16,
-		color: Colors.gray
+		color: Colors.gray,
 	},
 	eyeIcon: {
 		position: 'absolute',
 		right: 0,
 		paddingHorizontal: 20,
-		paddingVertical: 18
-	}
+		paddingVertical: 18,
+	},
 });

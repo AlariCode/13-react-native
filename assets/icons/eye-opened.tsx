@@ -1,12 +1,8 @@
-import * as React from "react"
-import Svg, { Path } from "react-native-svg"
+import * as React from 'react';
+import Svg, { Path } from 'react-native-svg';
 
 const EyeOpenedIcon = () => (
-	<Svg
-		width={24}
-		height={24}
-		fill="none"
-	>
+	<Svg width={24} height={24} fill="none">
 		<Path
 			fill="#AFB2BF"
 			fillRule="evenodd"
@@ -20,5 +16,5 @@ const EyeOpenedIcon = () => (
 			clipRule="evenodd"
 		/>
 	</Svg>
-)
-export default EyeOpenedIcon
+);
+export default EyeOpenedIcon;
