@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#16171D"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -29,7 +29,7 @@
     },
     "plugins": [
       "expo-router"
-    ]
-  },
-  "scheme": "purpleschool"
+    ],
+	"scheme": "purpleschool"
+  }
 }
