@@ -1,18 +1,19 @@
-import { useAtom } from 'jotai';
+import { useSetAtom } from 'jotai';
 import { View, Text } from 'react-native';
-import { loginAtom } from '../../entities/auth/model/auth.state';
+import { logoutAtom } from '../../entities/auth/model/auth.state';
 import { useEffect } from 'react';
 
 export default function MyCourses() {
-	const [auth, login] = useAtom(loginAtom);
+	// const [auth, login] = useAtom(loginAtom);
+	const logout = useSetAtom(logoutAtom);
 
 	useEffect(() => {
-		login({ email: 'vasia@pupkin.ru', password: '12345678' });
+		logout();
 	}, []);
 
 	return (
 		<View>
-			<Text>{auth?.access_token}</Text>
+			<Text>index</Text>
 		</View>
 	);
 }
