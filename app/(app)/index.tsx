@@ -1,15 +1,19 @@
-import { useSetAtom } from 'jotai';
+import { useAtomValue } from 'jotai';
 import { View, Text } from 'react-native';
-import { logoutAtom } from '../../entities/auth/model/auth.state';
+import { authAtom } from '../../entities/auth/model/auth.state';
 import { useEffect } from 'react';
+import { router, useRootNavigationState } from 'expo-router';
 
 export default function MyCourses() {
-	// const [auth, login] = useAtom(loginAtom);
-	const logout = useSetAtom(logoutAtom);
+	const { access_token } = useAtomValue(authAtom);
+	const state = useRootNavigationState();
 
 	useEffect(() => {
-		logout();
-	}, []);
+		if (!state?.key) return;
+		if (!access_token) {
+			router.replace('/login');
+		}
+	}, [access_token, state]);
 
 	return (
 		<View>
