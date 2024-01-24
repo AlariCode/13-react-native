@@ -3,7 +3,7 @@ import { Drawer } from 'expo-router/drawer';
 import { useAtomValue } from 'jotai';
 import { authAtom } from '../../entities/auth/model/auth.state';
 import { Colors, Fonts } from '../../shared/tokens';
-import { Text } from 'react-native';
+import { MenuButton } from '../../features/layout/ui/MenuButton/MenuButton';
 
 export default function AppRayout() {
 	const { access_token } = useAtomValue(authAtom);
@@ -20,7 +20,7 @@ export default function AppRayout() {
 					shadowOpacity: 0,
 				},
 				headerLeft: () => {
-					return <Text>!</Text>;
+					return <MenuButton navigation={navigation} />;
 				},
 				headerTitleStyle: {
 					color: Colors.white,
