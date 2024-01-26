@@ -26,7 +26,7 @@ export default function AppRayout() {
 				},
 				headerTitleStyle: {
 					color: Colors.white,
-					fontFamily: 'FiraSans',
+					fontFamily: Fonts.regular,
 					fontSize: Fonts.f20,
 				},
 				headerTitleAlign: 'center',
