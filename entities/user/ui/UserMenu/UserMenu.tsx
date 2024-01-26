@@ -18,7 +18,9 @@ export function UserMenu({ user }: { user: User | null }) {
 			) : (
 				<Image source={require('../../../../assets/images/avatar.png')} />
 			)}
-			<Text style={styles.name}>{user.name}</Text>
+			<Text style={styles.name}>
+				{user.name} {user.surname}
+			</Text>
 		</View>
 	);
 }
