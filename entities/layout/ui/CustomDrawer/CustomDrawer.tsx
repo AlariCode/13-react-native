@@ -13,8 +13,8 @@ import ProfileIcon from '../../../../assets/menu/profile';
 import { MenuItem } from '../MenuItem/MenuItem';
 
 const MENU = [
-	{ text: 'Курсы', icon: <CoursesIcon />, path: '/(app)' },
-	{ text: 'Профиль', icon: <ProfileIcon />, path: '/profile' },
+	{ text: 'Курсы', icon: <CoursesIcon />, path: 'index' },
+	{ text: 'Профиль', icon: <ProfileIcon />, path: 'profile' },
 ];
 
 export function CustomDrawer(props: DrawerContentComponentProps) {
@@ -31,7 +31,7 @@ export function CustomDrawer(props: DrawerContentComponentProps) {
 				<CloseDrawer {...props.navigation} />
 				<UserMenu user={profile.profile} />
 				{MENU.map((menu) => (
-					<MenuItem key={menu.path} {...menu} navigation={props.navigation} />
+					<MenuItem key={menu.path} {...menu} drawer={props} />
 				))}
 			</View>
 			<View style={styles.footer}>
