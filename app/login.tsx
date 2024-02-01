@@ -1,4 +1,5 @@
-import { StyleSheet, View, Image } from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import { StyleSheet, View, Image, Dimensions } from 'react-native';
 import { Input } from '../shared/Input/Input';
 import { Colors, Gaps } from '../shared/tokens';
 import { Button } from '../shared/Button/Button';
@@ -8,12 +9,15 @@ import { CustomLink } from '../shared/CustomLink/CustomLink';
 import { useAtom } from 'jotai';
 import { loginAtom } from '../entities/auth/model/auth.state';
 import { router } from 'expo-router';
+import { useScreenOrientation } from '../shared/hooks';
+import { Orientation } from 'expo-screen-orientation';
 
 export default function Login() {
 	const [localError, setLocalError] = useState<string | undefined>();
 	const [email, setEmail] = useState<string>();
 	const [password, setPassword] = useState<string>();
 	const [{ access_token, isLoading, error }, login] = useAtom(loginAtom);
+	const orientation = useScreenOrientation();
 
 	const submit = () => {
 		if (!email) {
@@ -45,8 +49,34 @@ export default function Login() {
 			<View style={styles.content}>
 				<Image style={styles.logo} source={require('../assets/logo.png')} resizeMode="contain" />
 				<View style={styles.form}>
-					<Input placeholder="Email" onChangeText={setEmail} />
-					<Input isPassword placeholder="Пароль" onChangeText={setPassword} />
+					<View
+						style={{
+							...styles.inputs,
+							flexDirection: orientation === Orientation.PORTRAIT_UP ? 'column' : 'row',
+						}}
+					>
+						<Input
+							style={{
+								width:
+									orientation === Orientation.PORTRAIT_UP
+										? 'auto'
+										: Dimensions.get('window').width / 2 - 16 - 48,
+							}}
+							placeholder="Email"
+							onChangeText={setEmail}
+						/>
+						<Input
+							style={{
+								width:
+									orientation === Orientation.PORTRAIT_UP
+										? 'auto'
+										: Dimensions.get('window').width / 2 - 16 - 48,
+							}}
+							isPassword
+							placeholder="Пароль"
+							onChangeText={setPassword}
+						/>
+					</View>
 					<Button text="Войти" onPress={submit} isLoading={isLoading} />
 				</View>
 				<CustomLink href={'/restore'} text="Восстановить пароль" />
@@ -72,5 +102,8 @@ const styles = StyleSheet.create({
 	},
 	logo: {
 		width: 220,
+	},
+	inputs: {
+		gap: Gaps.g16,
 	},
 });
