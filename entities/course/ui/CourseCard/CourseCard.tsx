@@ -1,10 +1,15 @@
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text, Linking } from 'react-native';
 import { StudentCourseDescription } from '../../model/course.model';
 import { Chip } from '../../../../shared/Chip/Chip';
 import { Button } from '../../../../shared/Button/Button';
 import { Colors, Fonts, Gaps, Radius } from '../../../../shared/tokens';
 
-export function CourseCard({ image, shortTitle, courseOnDirection }: StudentCourseDescription) {
+export function CourseCard({
+	image,
+	shortTitle,
+	courseOnDirection,
+	alias,
+}: StudentCourseDescription) {
 	return (
 		<View style={styles.card}>
 			<Image
@@ -22,7 +27,10 @@ export function CourseCard({ image, shortTitle, courseOnDirection }: StudentCour
 				</View>
 			</View>
 			<View style={styles.footer}>
-				<Button text="Купить" />
+				<Button
+					text="Купить"
+					onPress={() => Linking.openURL(`https://purpleschool.ru/course/${alias}`)}
+				/>
 			</View>
 		</View>
 	);
