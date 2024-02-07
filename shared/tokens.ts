@@ -13,6 +13,7 @@ export const Colors = {
 
 export const Gaps = {
 	g8: 8,
+	g10: 10,
 	g16: 16,
 	g20: 20,
 	g50: 50,
@@ -28,6 +29,7 @@ export const Fonts = {
 	f16: 16,
 	f18: 18,
 	f20: 20,
+	f21: 21,
 	regular: 'FiraSans-Regular',
 	semibold: 'FiraSans-SemiBold',
 };

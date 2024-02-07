@@ -2,9 +2,9 @@ import { StyleSheet, View, Image, Text } from 'react-native';
 import { StudentCourseDescription } from '../../model/course.model';
 import { Chip } from '../../../../shared/Chip/Chip';
 import { Button } from '../../../../shared/Button/Button';
-import { Colors, Radius } from '../../../../shared/tokens';
+import { Colors, Fonts, Gaps, Radius } from '../../../../shared/tokens';
 
-export function CourseCard({ image, title, courseOnDirection }: StudentCourseDescription) {
+export function CourseCard({ image, shortTitle, courseOnDirection }: StudentCourseDescription) {
 	return (
 		<View style={styles.card}>
 			<Image
@@ -15,7 +15,7 @@ export function CourseCard({ image, title, courseOnDirection }: StudentCourseDes
 				height={200}
 			/>
 			<View style={styles.header}>
-				<Text style={styles.title}>{title}</Text>
+				<Text style={styles.title}>{shortTitle}</Text>
 				<View style={styles.chips}>
 					{courseOnDirection.length > 0 &&
 						courseOnDirection.map((c) => <Chip text={c.direction.name} />)}
@@ -34,9 +34,30 @@ const styles = StyleSheet.create({
 		borderRadius: Radius.r10,
 		backgroundColor: Colors.blackLight,
 	},
-	image: {},
-	title: {},
-	chips: {},
-	header: {},
-	footer: {},
+	image: {
+		borderRadius: 10,
+		borderBottomLeftRadius: 0,
+		borderBottomRightRadius: 0,
+	},
+	title: {
+		fontSize: Fonts.f21,
+		color: Colors.white,
+		fontFamily: Fonts.semibold,
+		marginBottom: 12,
+	},
+	chips: {
+		flexDirection: 'row',
+		gap: Gaps.g10,
+	},
+	header: {
+		paddingHorizontal: 24,
+		paddingVertical: 18,
+	},
+	footer: {
+		backgroundColor: Colors.violetDark,
+		paddingHorizontal: 24,
+		paddingVertical: 20,
+		borderBottomLeftRadius: 10,
+		borderBottomRightRadius: 10,
+	},
 });
