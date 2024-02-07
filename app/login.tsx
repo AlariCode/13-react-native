@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
 		gap: Gaps.g16,
 	},
 	logo: {
-		width: 220,
+		width: Platform.select({ ios: 220, android: 300 }),
 	},
 	inputs: {
 		gap: Gaps.g16,
