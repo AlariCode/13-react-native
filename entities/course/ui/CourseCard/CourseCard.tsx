@@ -3,12 +3,15 @@ import { StudentCourseDescription } from '../../model/course.model';
 import { Chip } from '../../../../shared/Chip/Chip';
 import { Button } from '../../../../shared/Button/Button';
 import { Colors, Fonts, Gaps, Radius } from '../../../../shared/tokens';
+import MaskedView from '@react-native-masked-view/masked-view';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export function CourseCard({
 	image,
 	shortTitle,
 	courseOnDirection,
 	alias,
+	tariffs,
 }: StudentCourseDescription) {
 	return (
 		<View style={styles.card}>
@@ -25,6 +28,19 @@ export function CourseCard({
 					{courseOnDirection.length > 0 &&
 						courseOnDirection.map((c) => <Chip text={c.direction.name} />)}
 				</View>
+				<MaskedView
+					maskElement={<Text style={styles.tariff}>Тариф &laquo;{tariffs[0].name}&raquo;</Text>}
+				>
+					<LinearGradient
+						colors={['#D77BE5', '#6C38CC']}
+						start={{ x: 0, y: 0 }}
+						end={{ x: 1, y: 0 }}
+					>
+						<Text style={{ ...styles.tariff, ...styles.tariffWithOpacity }}>
+							Тариф &laquo;{tariffs[0].name}&raquo;
+						</Text>
+					</LinearGradient>
+				</MaskedView>
 			</View>
 			<View style={styles.footer}>
 				<Button
@@ -41,6 +57,14 @@ const styles = StyleSheet.create({
 		flexDirection: 'column',
 		borderRadius: Radius.r10,
 		backgroundColor: Colors.blackLight,
+	},
+	tariff: {
+		marginTop: 10,
+		fontSize: Fonts.f16,
+		fontFamily: Fonts.regular,
+	},
+	tariffWithOpacity: {
+		opacity: 0,
 	},
 	image: {
 		borderRadius: 10,
