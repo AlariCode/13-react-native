@@ -1,7 +1,10 @@
 import * as Notificaitons from 'expo-notifications';
+import { useRouter } from 'expo-router';
 import { useEffect } from 'react';
 
 export function Notificaiton() {
+	const router = useRouter();
+
 	Notificaitons.setNotificationHandler({
 		handleNotification: async () => ({
 			shouldPlaySound: true,
@@ -16,8 +19,8 @@ export function Notificaiton() {
 		});
 		const subResponseReceived = Notificaitons.addNotificationResponseReceivedListener(
 			(notification) => {
-				console.log('Clicked');
-				console.log(notification.notification.request.content.data);
+				const alias = notification.notification.request.content.data.alias;
+				router.push(`/(app)/course/${alias}`);
 			},
 		);
 		return () => {
