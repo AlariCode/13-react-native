@@ -1,7 +1,7 @@
 import { View, StyleSheet, FlatList, ActivityIndicator, RefreshControl } from 'react-native';
 import { useAtomValue, useSetAtom } from 'jotai';
 import { courseAtom, loadCourseAtom } from '../../entities/course/model/course.state';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { CourseCard } from '../../widget/course/ui/CourseCard/CourseCard';
 import { StudentCourseDescription } from '../../entities/course/model/course.model';
 import { Colors } from '../../shared/tokens';

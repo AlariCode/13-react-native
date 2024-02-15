@@ -6,6 +6,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
 	"backgroundColor": "#16171D",
+	"extra": { "eas": { "projectId": "9e8de316-bef0-4e46-9476-cabcea343056" } },
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
