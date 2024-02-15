@@ -1,11 +1,15 @@
 {
   "expo": {
-    "name": "native-app",
-    "slug": "native-app",
+    "name": "PupleSchool Demo App",
+    "slug": "purple-school-demo-app",
+	"description": "Приложение школы PurpleSchool для прохождения курсов",
     "version": "1.0.0",
+	"platforms": ["ios", "android"],
     "icon": "./assets/icon.png",
+	"orientation": "portrait",
     "userInterfaceStyle": "light",
 	"backgroundColor": "#16171D",
+	"primaryColor": "#6C38CC",
 	"extra": { "eas": { "projectId": "9e8de316-bef0-4e46-9476-cabcea343056" } },
     "splash": {
       "image": "./assets/splash.png",
@@ -16,7 +20,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
@@ -43,6 +47,12 @@
         {
           "icon": "./assets/notification-icon.png",
           "color": "#16171D"
+        }
+      ],
+	  [
+        "expo-image-picker",
+        {
+          "photosPermission": "Необходимо разрешение для выбора фото профиля"
         }
       ]
     ],
