@@ -1,16 +1,18 @@
 {
   "expo": {
     "name": "PupleSchool Demo App",
-    "slug": "purple-school-demo-app",
-	"description": "Приложение школы PurpleSchool для прохождения курсов",
+    "slug": "purpleschooldemoapp",
+    "description": "Приложение школы PurpleSchool для прохождения курсов",
     "version": "1.0.0",
-	"platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "icon": "./assets/icon.png",
-	"orientation": "portrait",
+    "orientation": "portrait",
     "userInterfaceStyle": "light",
-	"backgroundColor": "#16171D",
-	"primaryColor": "#6C38CC",
-	"extra": { "eas": { "projectId": "9e8de316-bef0-4e46-9476-cabcea343056" } },
+    "backgroundColor": "#16171D",
+    "primaryColor": "#6C38CC",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -26,36 +28,49 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "ru.purpleschool.purpleappdemo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-router",
-	  [
-		"expo-font",
-		{
-			"fonts": [
-				"./assets/fonts/FiraSans-Regular.ttf",
-				"./assets/fonts/FiraSans-SemiBold.ttf"
-			]
-		}
-	  ],
-	  [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/FiraSans-Regular.ttf",
+            "./assets/fonts/FiraSans-SemiBold.ttf"
+          ]
+        }
+      ],
+      [
         "expo-notifications",
         {
           "icon": "./assets/notification-icon.png",
           "color": "#16171D"
         }
       ],
-	  [
+      [
         "expo-image-picker",
         {
           "photosPermission": "Необходимо разрешение для выбора фото профиля"
         }
       ]
     ],
-	"scheme": "purpleschool"
+    "scheme": "purpleschool",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ae16f11a-60ff-4bc6-a52c-ce1a2f7b011d"
+      }
+    },
+    "owner": "alaricode"
   }
 }
