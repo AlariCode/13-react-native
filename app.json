@@ -22,7 +22,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": false
+      "supportsTablet": false,
+      "bundleIdentifier": "ru.purpleschool.purpleappdemo"
     },
     "android": {
       "adaptiveIcon": {
